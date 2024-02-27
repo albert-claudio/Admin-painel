@@ -12,7 +12,7 @@ const AddProduct = () => {
         new_price: "",
         old_price: ""
     })
-
+    //IMAGE APPEAR IN LOCATION UPLOAD
     const imageHandler = (e) => {
         setImage(e.target.files[0])
     }
@@ -21,7 +21,7 @@ const AddProduct = () => {
         setProductDetails({...productDetails,[e.target.name]:e.target.value})
     }
 
-
+    //CONNECTION API FOR ADD PRODUCT
     const Add_Product = async ()=>{
         console.log(productDetails)
         let responseData
@@ -29,7 +29,7 @@ const AddProduct = () => {
 
         let formData = new FormData()
         formData.append('product', image)
-
+        //CONNECTION API
         await fetch('http://localhost:4000/upload',{
             method: 'POST',
             headers:{
@@ -49,7 +49,7 @@ const AddProduct = () => {
                 },
                 body: JSON.stringify(product),
             }).then((resp)=>resp.json()).then((data)=>{
-                data.success?alert("Porduct Added"):alert("Failed")
+                data.success?alert("Product Added"):alert("Failed")
             })
         }
 
