@@ -8,7 +8,7 @@ const ListProduct = () => {
   const [allproducts,setAllProducts] = useState([])
   //CONNECTION API, FOR ADMIN THE PRODUCTS
   const fetchInfo = async ()=>{
-    await fetch('http://localhost:4000/allproducts')
+    await fetch('https://fullbox-node.onrender.com/allproducts')
     .then((res)=>res.json())
     .then((data)=>{setAllProducts(data)})
   }
