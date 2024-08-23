@@ -18,7 +18,7 @@ const ListProduct = () => {
   },[]);
 
   const remove_product = async (id)=>{
-    await fetch('http://localhost:4000/removeproduct',{
+    await fetch('https://fullbox-node.onrender.com/removeproduct',{
       method: 'POST',
       headers: {
         Accept:'application/json',
